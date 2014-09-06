@@ -14,7 +14,7 @@ module Grape
       end
 
       def handle_not_authenticated
-        error!('401 Unauthorized!', 401)
+        error!({message:'401 Unauthorized!'}, 401)
       end
     end
   end
