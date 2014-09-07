@@ -16,6 +16,10 @@ module Grape
       def handle_not_authenticated
         error!({message:'401 Unauthorized!'}, 401)
       end
+      
+      def logout!
+        warden.logout
+      end
     end
   end
 end
