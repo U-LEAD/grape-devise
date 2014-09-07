@@ -61,6 +61,11 @@ module Grape
                 signed_out = (::Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
                 true
               end
+              
+              desc "Return current user"
+              get :me do
+                current_user.to_json
+              end
             end
           end
         end
