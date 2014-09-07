@@ -8,9 +8,13 @@ module Grape
       def current_user
         warden.user
       end
+      
+      def authenticated?
+        warden.authenticated?
+      end
 
       def authenticate!
-        handle_not_authenticated unless warden.authenticated?
+        handle_not_authenticated unless authenticated?
       end
 
       def handle_not_authenticated
